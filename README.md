@@ -1,117 +1,88 @@
-# 🪞 Concept Mirror
+# Concept Mirror 🪞
 
-> A mirror, not a lecturer.
+> **"If you walk away slightly uncomfortable but clearer about what you don't understand yet, the mirror did its job."**
 
-**Concept Mirror** is an AI-powered web application designed to analyze and reflect your understanding of any concept. Instead of teaching you directly, it reveals the structure, gaps, and flaws in your mental model — helping you understand what you truly know and what needs more exploration.
+**Concept Mirror** is an intelligent, AI-powered tool designed to analyze and reflect your understanding of complex concepts. Unlike traditional educational tools that simply grade you or provide correct answers, Concept Mirror acts as a diagnostic tool for your mental models.
+
+It prioritizes **diagnosis over explanation**, helping you identify not just what you got wrong, but *why*—revealing hidden assumptions, confidence mismatches, and structural gaps in your knowledge.
+
+---
 
 ## ✨ Features
 
-- **Structured Reflection Analysis** — Get detailed feedback in 5 key areas:
-  1. What You Clearly Understand
-  2. What Is Missing or Incomplete
-  3. What Is Incorrect or Misleading
-  4. Hidden Assumptions Detected
-  5. Mental Model Summary
+- **🧠 Deep Concept Analysis**: Uses **Google's Gemini 2.0 Flash** model to deconstruct your explanations.
+- **🔍 Structured Reflection**: Breaks down feedback into clear categories:
+  - **What You Got Right**: Validates your current understanding.
+  - **What You Missed**: Highlights critical missing components.
+  - **What Needs Fixing**: Corrects misconceptions and misleading ideas.
+  - **Hidden Assumptions**: Surfaces the implicit beliefs underlying your explanation.
+- **📊 Mental Model Summary**: Provides a high-level summary of your thinking style (e.g., "Intuitive but shallow," "Procedural," "Comprehensive").
+- **🎨 Premium UI/UX**:
+  - Educational **Dark Mode** aesthetic.
+  - Modern **Glassmorphism** design elements.
+  - Smooth, staggered animations for a fluid experience.
+  - Markdown support for rich, readable feedback.
+- **🔒 Privacy-Focused**: Your API key is stored locally in your browser and used only for your requests.
 
-- **AI-Powered Analysis** — Integrates with Google Gemini API for intelligent concept analysis
-- **Demo Mode** — Works without API key using intelligent pattern matching
-- **Example Concepts** — Quick-start chips for common concepts (Binary Search, Recursion, REST API, etc.)
-- **Modern UI** — Beautiful dark theme with glassmorphism, gradient effects, and smooth animations
-- **Responsive Design** — Works seamlessly on desktop and mobile devices
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: Vanilla CSS (CSS Variables, Flexbox/Grid, Keyframe Animations)
+- **AI Integration**: [Google Gemini API](https://ai.google.dev/)
+- **Markdown Rendering**: `react-markdown`
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js (v16 or higher)
+- npm or yarn
+- A [Google Gemini API Key](https://aistudio.google.com/app/apikey) (Free)
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/concept-mirror.git
-cd concept-mirror
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/tech-akash010/Concept-Mirror.git
+    cd Concept-Mirror
+    ```
 
-# Install dependencies
-npm install
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-# Start the development server
-npm run dev
-```
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
 
-The app will be running at `http://localhost:5173`
+4.  **Open in Browser**
+    Visit `http://localhost:5173` (or the URL shown in your terminal).
 
-### Optional: Configure Gemini API
+5.  **Configure API Key**
+    - Click the **Settings (⚙️)** icon in the top right corner.
+    - Paste your Google Gemini API Key.
+    - Click **Save Key**.
 
-For full AI-powered analysis, you'll need a Google Gemini API key:
+## 📖 How to Use
 
-1. Visit [Google AI Studio](https://aistudio.google.com/apikey)
-2. Create a new API key
-3. Click the ⚙️ settings icon in the app header
-4. Enter your API key and save
-
-Without an API key, the app runs in **Demo Mode** with intelligent pattern-based analysis.
-
-## 🛠️ Tech Stack
-
-- **React 18** — UI library
-- **Vite** — Build tool and dev server
-- **Vanilla CSS** — Custom styling with CSS variables
-- **Google Gemini API** — AI-powered concept analysis
-
-## 📁 Project Structure
-
-```
-concept-mirror/
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx          # App header with logo and settings
-│   │   ├── Hero.jsx            # Hero section with tagline
-│   │   ├── InputSection.jsx    # Concept input and explanation form
-│   │   ├── ResultsSection.jsx  # Analysis results container
-│   │   ├── ReflectionCard.jsx  # Individual reflection cards
-│   │   ├── ApiKeyModal.jsx     # API key configuration modal
-│   │   └── ApiKeyModal.css     # Modal styles
-│   ├── services/
-│   │   └── analyzer.js         # Analysis service with Gemini integration
-│   ├── App.jsx                 # Main app component
-│   ├── App.css                 # App-specific styles
-│   ├── index.css               # Design system and base styles
-│   └── main.jsx                # App entry point
-├── public/
-│   └── mirror-icon.svg         # Favicon
-└── index.html                  # HTML template with SEO
-```
-
-## 🎨 Design Philosophy
-
-Concept Mirror follows a **reflective** design philosophy:
-
-- **Neutral Tone** — No praise padding, no harsh criticism
-- **Precision** — Points out specific issues rather than general feedback
-- **Diagnostics Over Teaching** — Reveals issues without giving full solutions
-- **Uncomfortable Clarity** — Success means users leave clearer about what they don't know
-
-## 📝 How It Works
-
-1. **Enter a Concept** — Type any concept you want to analyze
-2. **Explain It** — Write your understanding in your own words
-3. **Analyze** — Click the button to get structured reflection
-4. **Reflect** — Review gaps, misconceptions, and hidden assumptions
-5. **Improve** — Use insights to deepen your understanding
+1.  **Enter a Concept**: Type the name of the concept you want to test your understanding of (e.g., "Recursion", "Entropy", "Closures").
+2.  **Explain It**: In the text area, explain the concept as if you were teaching it to someone else. Be as detailed as possible.
+3.  **Analyze**: Click the **"Analyze Understanding"** button.
+4.  **Reflect**: Review the generated feedback. Pay special attention to the "Hidden Assumptions" and "What You Missed" sections.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- Report bugs
-- Suggest features
-- Submit pull requests
+1.  Fork the project
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
 ## 📄 License
 
-MIT License — feel free to use this project for learning and building.
-
----
-
-*"If you walk away slightly uncomfortable but clearer about what you don't understand yet, the mirror did its job."*
+This project is open source and available under the [MIT License](LICENSE).
