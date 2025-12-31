@@ -1,0 +1,114 @@
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 440px;
+    margin: var(--spacing-lg);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl), 0 0 60px rgba(99, 102, 241, 0.1);
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.visible .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border-primary);
+}
+
+.modal-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-subtle);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-xl);
+    font-size: 1.5rem;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.modal-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.modal-body {
+    padding: var(--spacing-xl);
+}
+
+.modal-body .input-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.api-info {
+    background: var(--color-bg-glass);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.api-info p {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-sm);
+}
+
+.api-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent-primary);
+    transition: color var(--transition-fast);
+}
+
+.api-link:hover {
+    color: var(--color-accent-secondary);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.modal-footer .btn {
+    flex: 1;
+}
+
+@media (max-width: 480px) {
+    .modal-footer {
+        flex-direction: column-reverse;
+    }
+}
