@@ -10,8 +10,6 @@
 
 *“If you walk away slightly uncomfortable but clearer about what you don't understand yet, the mirror did its job.”*
 
-[View Demo](#) · [Report Bug](https://github.com/tech-akash010/Concept-Mirror/issues) · [Request Feature](https://github.com/tech-akash010/Concept-Mirror/issues)
-
 </div>
 
 ---
