@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { hasApiKey, setApiKey } from '../services/analyzer';
+import { KeyIcon } from './Icons';
 import './ApiKeyModal.css';
 
 function ApiKeyModal({ onClose, onSave }) {
@@ -33,7 +34,9 @@ function ApiKeyModal({ onClose, onSave }) {
         <div className={`modal-overlay ${isVisible ? 'visible' : ''}`} onClick={handleClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
-                    <div className="modal-icon">🔑</div>
+                    <div className="modal-icon">
+                        <KeyIcon size={24} />
+                    </div>
                     <h2 className="modal-title">Configure API Key</h2>
                     <p className="modal-subtitle">
                         Add your Gemini API key for AI-powered analysis

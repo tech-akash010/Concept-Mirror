@@ -55,7 +55,7 @@ function ReflectionCard({
 ReflectionCard.propTypes = {
     number: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.node.isRequired,
     iconType: PropTypes.oneOf(['success', 'warning', 'error', 'info', 'neutral']).isRequired,
     items: PropTypes.arrayOf(PropTypes.string),
     content: PropTypes.string,

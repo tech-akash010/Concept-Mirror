@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { MirrorIcon, SettingsIcon } from './Icons';
 
 function Header({ onOpenSettings, apiConfigured }) {
     return (
@@ -7,7 +8,7 @@ function Header({ onOpenSettings, apiConfigured }) {
                 <div className="header-content">
                     <div className="logo">
                         <div className="logo-icon">
-                            🪞
+                            <MirrorIcon size={28} />
                         </div>
                         <span className="logo-text">Concept Mirror</span>
                     </div>
@@ -21,7 +22,7 @@ function Header({ onOpenSettings, apiConfigured }) {
                             onClick={onOpenSettings}
                             title="Configure API Key"
                         >
-                            ⚙️
+                            <SettingsIcon size={20} />
                         </button>
                     </div>
                 </div>

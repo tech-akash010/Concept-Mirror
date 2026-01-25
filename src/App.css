@@ -204,12 +204,177 @@
   background: var(--color-bg-secondary);
 }
 
-.char-count {
+.explanation-textarea.listening {
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+  background: var(--color-bg-secondary);
+  padding-top: calc(var(--spacing-lg) + 48px);
+}
+
+/* Voice Input Styles */
+.voice-input-badge {
+  margin-left: auto;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--color-accent-primary);
+  background: var(--color-accent-glow);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  animation: fadeIn 0.3s ease;
+}
+
+.textarea-controls {
   position: absolute;
   bottom: var(--spacing-md);
   right: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  z-index: 1;
+}
+
+.char-count {
   font-size: 0.75rem;
   color: var(--color-text-muted);
+}
+
+.voice-input-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.voice-input-btn:hover {
+  background: var(--color-bg-card);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.voice-input-btn.listening {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.voice-input-btn.listening:hover {
+  background: var(--color-accent-secondary);
+  border-color: var(--color-accent-secondary);
+}
+
+.listening-indicator {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-success);
+  border: 2px solid var(--color-bg-card);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.voice-feedback {
+  position: absolute;
+  top: var(--spacing-lg);
+  left: var(--spacing-lg);
+  right: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-accent-primary);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  z-index: 2;
+  animation: fadeIn 0.3s ease;
+}
+
+.voice-pulse {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-primary);
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+/* Voice Error Styles */
+.voice-error {
+  position: absolute;
+  top: var(--spacing-lg);
+  left: var(--spacing-lg);
+  right: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: rgba(239, 68, 68, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  z-index: 3;
+  animation: fadeIn 0.3s ease;
+}
+
+.voice-error .error-icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.error-dismiss {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.error-dismiss:hover {
+  color: var(--color-text-primary);
+}
+
+@keyframes recordingPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
 }
 
 .action-bar {

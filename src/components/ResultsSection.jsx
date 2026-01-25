@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import ReflectionCard from './ReflectionCard';
+import { MirrorIcon, RefreshIcon, CheckIcon, CircleIcon, XIcon, DiamondIcon, BrainIcon } from './Icons';
 
 function ResultsSection({ result, conceptName, onNewAnalysis }) {
     const sections = [
         {
             number: '01',
             title: 'What You Got Right',
-            icon: '✓',
+            icon: <CheckIcon size={20} />,
             iconType: 'success',
             items: result.understood,
             type: 'list'
@@ -14,7 +15,7 @@ function ResultsSection({ result, conceptName, onNewAnalysis }) {
         {
             number: '02',
             title: 'What You Missed',
-            icon: '○',
+            icon: <CircleIcon size={20} />,
             iconType: 'warning',
             items: result.missing,
             type: 'list'
@@ -22,7 +23,7 @@ function ResultsSection({ result, conceptName, onNewAnalysis }) {
         {
             number: '03',
             title: 'What Needs Fixing',
-            icon: '✕',
+            icon: <XIcon size={20} />,
             iconType: 'error',
             items: result.incorrect,
             type: 'list'
@@ -30,7 +31,7 @@ function ResultsSection({ result, conceptName, onNewAnalysis }) {
         {
             number: '04',
             title: 'Hidden Assumptions',
-            icon: '◈',
+            icon: <DiamondIcon size={20} />,
             iconType: 'info',
             items: result.assumptions,
             type: 'list'
@@ -38,7 +39,7 @@ function ResultsSection({ result, conceptName, onNewAnalysis }) {
         {
             number: '05',
             title: 'Your Thinking Style',
-            icon: '◉',
+            icon: <BrainIcon size={20} />,
             iconType: 'neutral',
             content: result.summary,
             type: 'paragraph',
@@ -50,7 +51,9 @@ function ResultsSection({ result, conceptName, onNewAnalysis }) {
         <section className="results-section">
             <div className="results-header">
                 <div className="results-title">
-                    <div className="results-icon">🪞</div>
+                    <div className="results-icon">
+                        <MirrorIcon size={32} />
+                    </div>
                     <div>
                         <p className="concept-label">Concept Reflection</p>
                         <h2 className="concept-name">{conceptName}</h2>
@@ -59,7 +62,7 @@ function ResultsSection({ result, conceptName, onNewAnalysis }) {
 
                 <div className="results-actions">
                     <button className="btn btn-secondary" onClick={onNewAnalysis}>
-                        <span>↻</span>
+                        <RefreshIcon size={18} />
                         <span>New Analysis</span>
                     </button>
                 </div>
